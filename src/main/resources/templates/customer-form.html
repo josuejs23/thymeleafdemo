@@ -24,10 +24,17 @@
               th:errors="*{freeTickets}"
               class="error"></span>
         <br>
+
         Postal Code: <input type="text" th:field="*{codePostal}"/>
         <span th:if="${#fields.hasErrors('codePostal')}"
               th:errors="*{codePostal}"
               class="error"></span>
+        <br>
+        Course code: <input type="text" th:field="*{code}"/>
+        <span th:if="${#fields.hasErrors('code')}"
+              th:errors="*{code}"
+              class="error"></span>
+        <br>
 
         <input type="submit" value="Submit"/>
     </form>

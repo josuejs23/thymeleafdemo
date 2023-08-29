@@ -1,5 +1,6 @@
 package com.josuejs23.springboot.thymeleafdemo;
 
+import com.josuejs23.springboot.thymeleafdemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -17,6 +18,9 @@ public class Customer {
 
     @Pattern(regexp = "^[A-Za-z0-9]{5}", message = "Must have five chars/digits")
     private String codePostal;
+
+    @CourseCode(value = "LUV", message = "You silly, the code must start with LUV")
+    private String code;
 
     public String getFirstName() {
         return firstName;
@@ -48,5 +52,13 @@ public class Customer {
 
     public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
